@@ -1,4 +1,8 @@
-const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite"];
+const MODELS = [
+  "gemini-3.5-flash-lite",
+  "gemini-3.5-flash",
+  "gemini-3-flash-preview",
+];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -28,15 +32,15 @@ async function generateWithFallback(apiKey, payload) {
 
       lastError = new Error(data.error?.message || `HTTP ${response.status}`);
 
-      // Jika model utama sedang sibuk/padat (503/429), otomatis pindah ke model cadangan
-      if ([404, 429, 500, 503].includes(response.status) && i < MODELS.length - 1) {
-        await sleep(600);
+      // Otomatis pindah ke model berikutnya jika model tidak tersedia atau sedang padat
+      if ([400, 404, 429, 500, 503].includes(response.status) && i < MODELS.length - 1) {
+        await sleep(500);
         continue;
       }
     } catch (err) {
       lastError = err;
       if (i < MODELS.length - 1) {
-        await sleep(600);
+        await sleep(500);
         continue;
       }
     }
