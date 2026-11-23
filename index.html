@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#166534">
+  <meta name="description" content="Peer Polimedia - Pengajuan jadwal konsultasi mahasiswa dengan dosen.">
+  <title>Peer Polimedia — Konsultasi Dosen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">P</span>
+      <span>Peer <b>Polimedia</b></span>
+    </a>
+    <span class="top-note"><span class="live-dot"></span> Portal konsultasi mahasiswa</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow"><span></span> STUDENT CONSULTATION PORTAL</div>
+      <h1>Atur jadwal.<br><em>Mulai diskusi.</em></h1>
+      <p>Ajukan jadwal konsultasi dengan dosen secara praktis. Pengajuan akan diteruskan ke Discord dosen untuk ditinjau.</p>
+      <div class="steps">
+        <div class="step"><span>01</span><div><b>Isi formulir</b><small>Lengkapi informasi konsultasi.</small></div></div>
+        <div class="step"><span>02</span><div><b>Kirim pengajuan</b><small>Notifikasi dikirim ke Discord dosen.</small></div></div>
+        <div class="step"><span>03</span><div><b>Tunggu konfirmasi</b><small>Dosen menghubungi untuk konfirmasi.</small></div></div>
+      </div>
+      <div class="intro-foot">POLITEKNIK NEGERI MEDIA KREATIF</div>
+    </section>
+
+    <section class="form-card">
+      <div class="form-heading">
+        <div>
+          <div class="eyebrow">FORMULIR PENGAJUAN</div>
+          <h2>Jadwalkan konsultasi</h2>
+          <p>Isi detail di bawah ini dengan benar.</p>
+        </div>
+        <div class="calendar-icon" aria-hidden="true">▦</div>
+      </div>
+
+      <form id="consultation-form">
+        <div class="field-grid">
+          <label class="field">
+            <span>Nama mahasiswa <i>*</i></span>
+            <input name="studentName" placeholder="Nama lengkap" maxlength="100" required>
+          </label>
+          <label class="field">
+            <span>Email mahasiswa <i>*</i></span>
+            <input type="email" name="studentEmail" placeholder="nama@email.com" maxlength="150" required>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Nama dosen <i>*</i></span>
+          <input name="lecturerName" placeholder="Nama dosen yang dituju" maxlength="120" required>
+        </label>
+
+        <label class="field">
+          <span>Topik konsultasi <i>*</i></span>
+          <input name="topic" placeholder="Contoh: Konsultasi tugas akhir" maxlength="180" required>
+        </label>
+
+        <div class="field-grid date-grid">
+          <label class="field">
+            <span>Tanggal <i>*</i></span>
+            <input type="date" name="date" id="date" required>
+          </label>
+          <div class="field">
+            <span>Waktu konsultasi <i>*</i></span>
+            <div class="time-fields">
+              <input type="time" name="startTime" aria-label="Jam mulai" required>
+              <span>—</span>
+              <input type="time" name="endTime" aria-label="Jam selesai" required>
+            </div>
+          </div>
+        </div>
+
+        <label class="field">
+          <span>Catatan tambahan <small>Opsional</small></span>
+          <textarea name="notes" rows="3" maxlength="1000" placeholder="Jelaskan hal yang ingin dibahas saat konsultasi..."></textarea>
+        </label>
+
+        <div class="notice"><span>ⓘ</span><p>Pengajuan belum berarti jadwal disetujui. Silakan tunggu konfirmasi dari dosen melalui Discord atau kontak yang diberikan.</p></div>
+        <button class="submit-btn" type="submit"><span>Kirim pengajuan</span><b>→</b></button>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+        <p class="required-note"><i>*</i> Wajib diisi · Zona waktu: WIB (UTC+7)</p>
+      </form>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> Peer Polimedia</span><span>Designed for academic collaboration</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
