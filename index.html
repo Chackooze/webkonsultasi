@@ -93,6 +93,50 @@
     </section>
   </main>
 
+  <!-- Widget Chatbot Sementara Mahasiswa -->
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-window" id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-title">
+          <span class="chat-badge">AI</span>
+          <div>
+            <strong>Asisten Mahasiswa</strong>
+            <small>Sesi sementara · Hilang saat refresh</small>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button type="button" id="chat-reset" title="Hapus riwayat chat sementara">Reset</button>
+          <button type="button" id="chat-close" aria-label="Tutup chat">✕</button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
+
+      <div class="chat-suggestions" id="chat-suggestions">
+        <button type="button" data-prompt="Bantu saya merumuskan topik dan catatan konsultasi tugas akhir">Rumuskan topik TA</button>
+        <button type="button" data-prompt="Apa saja yang perlu disiapkan sebelum bimbingan dengan dosen?">Persiapan bimbingan</button>
+        <button type="button" data-prompt="Bagaimana alur pengajuan konsultasi di website ini?">Alur pengajuan</button>
+      </div>
+
+      <form class="chat-input-area" id="chat-form">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Tanya seputar konsultasi..."
+          maxlength="500"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="chat-send" aria-label="Kirim pesan">→</button>
+      </form>
+    </div>
+
+    <button type="button" class="chat-toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-window">
+      <span class="chat-toggle-icon">💬</span>
+      <span>Tanya Asisten</span>
+    </button>
+  </div>
+
   <footer><span>© <span id="year"></span> Peer Polimedia</span><span>Designed for academic collaboration</span></footer>
   <script src="script.js"></script>
 </body>
