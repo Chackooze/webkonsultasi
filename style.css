@@ -1,3 +1,29 @@
+*{box-sizing:border-box} :root{--green:#166534;--green2:#15803d;--ink:#17231c;--muted:#718078;--line:#e5ebe6;--bg:#f5f8f5}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;min-height:100vh}
+.topbar{height:76px;padding:0 max(6vw,24px);display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink);font-size:17px;font-weight:500;text-decoration:none;letter-spacing:-.4px}.brand b{font-weight:800}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--green);color:white;display:grid;place-items:center;font-size:20px;font-weight:800}
+.top-note{font-size:12px;color:#68766d;display:flex;align-items:center;gap:8px}.live-dot{width:7px;height:7px;background:#22a35a;border-radius:50%;box-shadow:0 0 0 4px #e7f5eb}
+.layout{max-width:1120px;margin:54px auto 64px;padding:0 24px;display:grid;grid-template-columns:.88fr 1.12fr;gap:70px;align-items:center}
+.intro{padding:12px 0}.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:var(--green2);display:flex;align-items:center;gap:8px}.eyebrow span{width:19px;height:2px;background:#31a45b}
+h1{font-size:clamp(42px,5.5vw,65px);line-height:1.05;letter-spacing:-3.5px;margin:22px 0 18px;font-weight:800}h1 em{font-style:normal;color:var(--green2)}
+.intro>p{max-width:400px;color:#6e7b73;line-height:1.8;font-size:14px}
+.steps{margin-top:42px;display:grid;gap:22px}.step{display:flex;align-items:center;gap:15px}.step>span{width:39px;height:39px;border:1px solid #dce8de;border-radius:12px;display:grid;place-items:center;color:var(--green);font-size:11px;font-weight:800;background:#fff}.step div{display:grid;gap:4px}.step b{font-size:13px}.step small{font-size:11px;color:#87928b}
+.intro-foot{margin-top:58px;color:#9aa69e;font-size:9px;font-weight:700;letter-spacing:1.6px}
+.form-card{background:#fff;border:1px solid #e8eee9;border-radius:19px;padding:34px 36px;box-shadow:0 18px 55px rgba(28,61,38,.07)}
+.form-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:27px}.form-heading h2{font-size:23px;letter-spacing:-.8px;margin:8px 0 5px}.form-heading p{font-size:12px;color:var(--muted);margin:0}
+.calendar-icon{width:43px;height:43px;border-radius:13px;background:#edf7ef;color:var(--green);display:grid;place-items:center;font-size:25px}
+form{display:grid;gap:17px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px;min-width:0}.field>span{font-size:11px;font-weight:700;color:#46544b}.field i,.required-note i{font-style:normal;color:#d64b4b}.field small{font-size:10px;color:#9aa49d;font-weight:400;margin-left:4px}
+input,textarea{width:100%;border:1px solid #e1e8e2;border-radius:9px;background:#fff;padding:12px 13px;font:12px "DM Sans",sans-serif;color:var(--ink);outline:none;transition:.2s}
+input:focus,textarea:focus{border-color:#64a77a;box-shadow:0 0 0 3px #eaf5ed}input::placeholder,textarea::placeholder{color:#aab3ad}textarea{resize:vertical;min-height:78px}
+.time-fields{display:flex;align-items:center;gap:8px}.time-fields input{min-width:0;padding:12px 8px}.time-fields span{color:#a0aaa3}
+.notice{display:flex;gap:10px;background:#f3f8f3;border:1px solid #e5f0e6;border-radius:9px;padding:11px 12px;color:#5e7564}.notice>span{font-size:15px}.notice p{margin:0;font-size:10px;line-height:1.6}
+.submit-btn{height:46px;border:0;border-radius:9px;background:var(--green);color:#fff;font:700 12px "DM Sans",sans-serif;display:flex;justify-content:space-between;align-items:center;padding:0 16px;cursor:pointer;transition:.2s}.submit-btn:hover{background:#105329;transform:translateY(-1px)}.submit-btn:disabled{opacity:.6;cursor:wait;transform:none}.submit-btn b{font-size:19px;font-weight:400}
+.form-status{font-size:11px;line-height:1.5}.form-status.success{color:#168044}.form-status.error{color:#c43e3e}.required-note{font-size:9px;color:#9aa49d;text-align:center;margin:0}
+footer{max-width:1120px;margin:0 auto;padding:0 24px 25px;display:flex;justify-content:space-between;color:#9aa49e;font-size:10px}
+@media(max-width:800px){.layout{grid-template-columns:1fr;gap:30px;margin:35px auto 45px;max-width:570px}.intro{padding:0}.intro h1{font-size:48px}.steps{margin-top:27px;grid-template-columns:1fr 1fr 1fr;gap:10px}.step{align-items:flex-start;gap:8px}.step>span{flex:0 0 32px;width:32px;height:32px}.step b{font-size:10px}.step small{font-size:9px;line-height:1.4}.intro-foot{display:none}}
+@media(max-width:520px){.topbar{height:64px;padding:0 18px}.top-note{font-size:10px}.layout{padding:0 15px;margin:27px auto 35px}.intro h1{font-size:43px;letter-spacing:-2.5px}.intro>p{font-size:12px}.steps{gap:7px}.step{display:grid;gap:7px}.step b{font-size:9px}.step small{font-size:8px}.form-card{padding:24px 18px;border-radius:15px}.form-heading h2{font-size:20px}.field-grid{grid-template-columns:1fr;gap:15px}.date-grid{grid-template-columns:1fr 1fr;gap:10px}.time-fields{gap:5px}.time-fields input{font-size:11px;padding:11px 5px}footer{padding:0 18px 20px;font-size:9px}}
+
 /* === Chatbot Sementara Mahasiswa === */
 .chat-widget{position:fixed;right:24px;bottom:24px;z-index:999;font-family:"DM Sans",Arial,sans-serif}
 .chat-toggle{height:46px;padding:0 18px;border:0;border-radius:999px;background:var(--green);color:#fff;font:700 12px "DM Sans",sans-serif;display:flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 12px 30px rgba(22,101,52,.28);transition:.2s}
