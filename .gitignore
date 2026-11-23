@@ -5,4 +5,4 @@
 *.env.save
 
 # Backup
-*.save
+*.save.DS_Store
